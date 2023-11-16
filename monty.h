@@ -1,5 +1,6 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef __MONTY_H__
+#define __MONTY_H__
+#define _GNU_SOURCE
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -74,6 +75,7 @@ int _unknownOpError(char *opcode, unsigned int line_number);
 int _noIntError(unsigned int line_number);
 int _popError(unsigned int line_number);
 int _pintError(unsigned int line_number);
+int _shortStackError(unsigned int line_number, char *op);
 
 int _isDelim(char ch, char *delims);
 int _word_len(char *str, char *delims);

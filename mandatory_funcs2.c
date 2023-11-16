@@ -11,7 +11,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		_op_tokError(short_stack_error(line_number, "swap"));
+		_op_tokError(_shortStackError(line_number, "swap"));
 		return;
 	}
 
@@ -49,7 +49,7 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
-		_op_tokError(short_stack_error(line_number, "add"));
+		_op_tokError(_shortStackError(line_number, "add"));
 		return;
 	}
 

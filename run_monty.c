@@ -1,3 +1,5 @@
+#include "monty.h"
+
 /**
  * _init_monty - Primary function to execute a Monty bytecodes script.
  * @script_fd: File descriptor for an open Monty bytecodes script.
@@ -11,11 +13,12 @@ int _init_monty(FILE *script_fd)
 	size_t length = 0, exit_stat = EXIT_SUCCESS;
 	unsigned int line_number = 0, prev_tok_len = 0;
 	void (*op_func)(stack_t**, unsigned int);
+	ssize_t res;
 
-	if (init_stack(&stack) == EXIT_FAILURE)
+	if (_init_stack(&stack) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
-
-	while (getline(&line, &length, script_fd) != -1)
+	res = getline(&line, &length, script_fd);
+	while (res != -1)
 	{
 		line_number++;
 		op_toks = _str_tok(line, DELIMS);

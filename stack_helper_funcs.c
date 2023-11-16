@@ -8,12 +8,12 @@
  * Return: If an error occurs - EXIT_FAILURE.
  *         Otherwise - EXIT_SUCCESS.
  */
-int_init_stack(stack_t **stack)
+int _init_stack(stack_t **stack)
 {
 	stack_t *node;
 
 	node = malloc(sizeof(stack_t));
-	if (s == NULL)
+	if (node == NULL)
 		return (_mallocError());
 
 	node->n = STACK;
