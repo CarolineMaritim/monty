@@ -3,7 +3,6 @@
 /**
  * _init_monty - Primary function to execute a Monty bytecodes script.
  * @script_fd: File descriptor for an open Monty bytecodes script.
- *
  * Return: EXIT_SUCCESS on success, respective error code on failure.
  */
 int _init_monty(FILE *script_fd)
@@ -56,13 +55,11 @@ int _init_monty(FILE *script_fd)
 		_freeTokens();
 	}
 	_freeStack(&stack);
-
 	if (line && *line == 0)
 	{
 		free(line);
 		return (_mallocError());
 	}
-
 	free(line);
 	return (exit_stat);
 }

@@ -1,10 +1,8 @@
 #include "monty.h"
 /**
  * _str_tok - takes a string and seperates its words
- *
  * @str: string to seperate into words
  * @delims: delimitors to use to delimit words
- *
  * Return: 2D array of pointers to each word
  */
 
@@ -17,7 +15,6 @@ char **_str_tok(char *str, char *delims)
 		return (NULL);
 	wc = _word_count(str, delims);
 
-
 	if (wc == 0)
 		return (NULL);
 	words = malloc((wc + 1) * sizeof(char *));
@@ -27,9 +24,7 @@ char **_str_tok(char *str, char *delims)
 	{
 		wordlength = _word_len(str, delims);
 		if (_isDelim(*str, delims))
-		{
 			str = _word_next(str, delims);
-		}
 		words[idx] = malloc((wordlength + 1) * sizeof(char));
 		if (words[idx] == NULL)
 		{
@@ -51,6 +46,6 @@ char **_str_tok(char *str, char *delims)
 		str = _word_next(str, delims);
 		idx++;
 	}
-	words[idx] = NULL; 
+	words[idx] = NULL;
 	return (words);
 }
