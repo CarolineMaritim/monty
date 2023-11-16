@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <strings.h>
+#include <string.h>
 
 /*MACROS*/
 #define STACK 0
@@ -44,7 +44,7 @@ typedef struct instruction_s
 } instruction_t;
 
 void _freeStack(stack_t **stack);
-int_init_stack(stack_t **stack);
+int _init_stack(stack_t **stack);
 int _check_mode(stack_t *stack);
 void _freeTokens(void);
 unsigned int token_arr_len(void);
@@ -81,8 +81,8 @@ int _word_count(char *str, char *delims);
 char *_word_next(char *str, char *delims);
 
 
-	int _checkline(char *line, char *delims)
-void (*_getopcode(char *opcode))(stack_t**, unsigned int)
+int _checkline(char *line, char *delims);
+void (*_getopcode(char *opcode))(stack_t**, unsigned int);
 
 #endif
 

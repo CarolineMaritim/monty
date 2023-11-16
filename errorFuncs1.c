@@ -34,4 +34,3 @@ void _op_tokError(int error_code)
 	free(op_toks);
 	op_toks = new_toks;
 }
-
